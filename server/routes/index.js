@@ -10,6 +10,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/questions', questionRoutes);
-router.use('answers', answerRoutes);
+router.use('/answers', answerRoutes);
 
 module.exports = router;
