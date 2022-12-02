@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
             })
             .catch((err) => {
                 res.status(400).send({
-                    status: 'false', //! Boobytrap?
+                    status: false, //! originally with ''. Boobytrap?
                     message: 'Question could not be added',
                 })
             })
