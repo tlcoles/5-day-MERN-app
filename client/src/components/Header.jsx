@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <div className="flex items-center bg-white sticky z-50 shadow-sm top-0 justify-center p-[3px]">
       <div className="flex">
-          <span className="text-orange-500 text-lg font-semibold mr-5">5DayMernApp</span>
+          <span className="text-orange-500 text-lg font-semibold mr-5">5DayMERNApp</span>
       </div>
       <div className="flex">
         <div className="headerIcon">
