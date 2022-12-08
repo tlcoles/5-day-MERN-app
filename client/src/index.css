@@ -15,4 +15,10 @@
     .sideBarText {
         @apply ml-[10px] text-gray-500 font-semibold text-sm;
     }
+    .widgetContent {
+        @apply m-1 p-1 border-b-2 border-solid border-gray-100 flex hover:bg-gray-100 transition-all duration-300 ease-out;
+    }
+    .widgetImg {
+        @apply h-11 w-11 rounded-full;
+    }
 }
