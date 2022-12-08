@@ -1,5 +1,14 @@
 import React from "react";
-import { AssignmentTurnedInOutlined, Close, NotificationsOutlined, FeaturedPlayListOutlined,PeopleAltOutlined, Search, Home, ExpandMore } from '@mui/icons-material';
+import { 
+  AssignmentTurnedInOutlined, 
+  Close, 
+  NotificationsOutlined, 
+  FeaturedPlayListOutlined,
+  PeopleAltOutlined, 
+  Search, 
+  Home, 
+  ExpandMore 
+} from '@mui/icons-material';
 
 import { Avatar } from '@mui/material';
 
