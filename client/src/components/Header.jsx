@@ -1,7 +1,7 @@
 import React from "react";
-import { AssignmentTurnedInOutlinedIcon, CloseIcon, NotificationsOutlinedIcon, FeaturedPlayListOutlinedIcon,PeopleAltOutlinedIcon, SearchIcon, HomeIcon, ExpandMoreIcon } from '@mui/icons-material/';
+import { AssignmentTurnedInOutlined, Close, NotificationsOutlined, FeaturedPlayListOutlined,PeopleAltOutlined, Search, Home, ExpandMore } from '@mui/icons-material';
 
-import { Avatar, Button } from '@mui/material';
+import { Avatar } from '@mui/material';
 
 const Header = () => {
   return (
@@ -9,11 +9,32 @@ const Header = () => {
       <div className="flex">
           <span className="text-orange-500 text-lg font-semibold mr-5">5DayMernApp</span>
       </div>
-      <div>
-        Icons
+      <div className="flex">
+        <div className="headerIcon">
+          <Home/>
+        </div>
+        <div className="headerIcon">
+          <FeaturedPlayListOutlined/>
+        </div>
+        <div className="headerIcon">
+          <AssignmentTurnedInOutlined/>
+        </div>
+        <div className="headerIcon">
+          <PeopleAltOutlined/>
+        </div>
+        <div className="headerIcon">
+          <NotificationsOutlined/>
+        </div>
       </div>
-      <div>
-        Avatar & Button
+      <div className="hidden md:flex items-center border-2 rounded-lg border-solid border-gray-300 p-[5px] ml-[5px]">
+        <Search/>
+        <input className="bg-transparent outline-none border-none" type="text" placeholder='Search...'/>
+      </div>
+      <div className="flex items-center ml-[25px]">
+        <span>
+          <Avatar/>
+        </span>
+        <button className="px-2 py-1 rounded-lg ml-1 bg-orange-300 hover:bg-orange-500">Add Question</button>
       </div>
     </div>
   )
