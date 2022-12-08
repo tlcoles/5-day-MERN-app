@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .headerIcon {
+        @apply p-[5px] text-orange-400 cursor-pointer hover:text-orange-500 hover:bg-[#eee] hover:rounded-full transition-all duration-300 ease-out;
+    }
+}
