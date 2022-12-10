@@ -12,27 +12,27 @@ const SidebarItems = () => {
   return (
     <div className="flex flex-col">
         <div className="sideBarOption">
-            <TimelineOutlined className="sidebarIcon"/>
+            <TimelineOutlined className="sideBarIcon"/>
             <p className="sideBarText">History</p>
         </div>
         <div className="sideBarOption">
-            <LibraryMusicOutlined className="sidebarIcon"/>
+            <LibraryMusicOutlined className="sideBarIcon"/>
             <p className="sideBarText">Music</p>
         </div>
         <div className="sideBarOption">
-            <BusinessCenterOutlined className="sidebarIcon"/>
+            <BusinessCenterOutlined className="sideBarIcon"/>
             <p className="sideBarText">Business</p>
         </div>
         <div className="sideBarOption">
-            <OutdoorGrillOutlined className="sidebarIcon"/>
+            <OutdoorGrillOutlined className="sideBarIcon"/>
             <p className="sideBarText">Cooking</p>
         </div>
         <div className="sideBarOption">
-            <ComputerOutlined className="sidebarIcon"/>
+            <ComputerOutlined className="sideBarIcon"/>
             <p className="sideBarText">Technology</p>
         </div>
         <div className="sideBarOption">
-            <SportsBasketballOutlined className="sidebarIcon"/>
+            <SportsBasketballOutlined className="sideBarIcon"/>
             <p className="sideBarText">Sports</p>
         </div>
         <div></div>
