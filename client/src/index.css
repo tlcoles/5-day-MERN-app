@@ -18,7 +18,13 @@
     .widgetContent {
         @apply m-1 p-1 border-b-2 border-solid border-gray-100 flex hover:bg-gray-100 transition-all duration-300 ease-out;
     }
+    .widgetHeader {
+        @apply text-gray-800
+    }
+    .widgetSubHeader {
+        @apply text-gray-400 text-sm
+    }
     .widgetImg {
-        @apply h-11 w-11 rounded-full;
+        @apply ml-[-2px] mr-2 h-11 w-11 rounded-full;
     }
 }
