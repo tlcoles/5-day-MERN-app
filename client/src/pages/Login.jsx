@@ -1,6 +1,6 @@
 import React from "react";
 import { signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../firebase"
+import { auth, provider } from "../firebase";
 
 const Login = () => {
     const handleLogin = async() => {
