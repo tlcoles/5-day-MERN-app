@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
@@ -23,6 +24,30 @@ const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+
+  const handleAddQuestion = async() => {
+    if(description!==""){
+      const config = {
+        headers:{
+          "Content-Type":"application/json"
+        },
+      };
+
+      const body = {
+        description: description,
+        imageUrl: imageUrl,
+        user:user
+      }
+
+      // Make request to backend server
+      await axios.post("/api/questions", body, config).then((res) => {
+        alert("Question submitted!");
+        window.location.href = "/";
+      }).catch((e) => {
+        alert("Error in adding question");
+      })
+    }
+  }
   
   const handleLogout = () => {
     if(window.confirm("Are you sure you want to logout?")){
