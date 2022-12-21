@@ -90,7 +90,7 @@ const Header = () => {
         <span onClick={handleLogout}>
           <Avatar src={user?.photo}/>
         </span>
-        <button className="px-2 py-1 rounded-lg ml-1 bg-orange-300 hover:bg-orange-500">Add Question</button>
+        <button className="px-2 py-1 rounded-lg ml-1 bg-orange-300 hover:bg-orange-500" onClick={() => setIsModalOpen(true)}>Add Question</button>
       </div>
     </div>
   )
