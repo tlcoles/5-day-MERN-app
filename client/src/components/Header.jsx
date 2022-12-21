@@ -1,7 +1,8 @@
 import React from "react";
-import { auth, signOut } from "../firebase";
 import { useDispatch, useSelector } from "react-redux";
-import { logout, selectUser } from "../src/features/userSlice";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
+import { logout, selectUser } from "../features/userSlice";
 import { 
   AssignmentTurnedInOutlined, 
   Close, 
