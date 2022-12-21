@@ -19,6 +19,10 @@ import { Avatar } from '@mui/material';
 const Header = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [description, setDescription] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   
   const handleLogout = () => {
     if(window.confirm("Are you sure you want to logout?")){
