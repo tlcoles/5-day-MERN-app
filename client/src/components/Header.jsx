@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { logout, selectUser } from "../features/userSlice";
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
 import { 
   AssignmentTurnedInOutlined, 
-  Close, 
+  Close,
   NotificationsOutlined, 
   FeaturedPlayListOutlined,
   PeopleAltOutlined, 
@@ -15,7 +17,7 @@ import {
   ExpandMore 
 } from '@mui/icons-material';
 
-import { Avatar, Input, Modal } from '@mui/material';
+import { Avatar, Input } from '@mui/material';
 
 const Header = () => {
   const user = useSelector(selectUser);
@@ -91,7 +93,6 @@ const Header = () => {
           <Avatar src={user?.photo}/>
         </span>
         <button className="px-2 py-1 rounded-lg ml-1 bg-orange-300 hover:bg-orange-500" onClick={() => setIsModalOpen(true)}>Add Question</button>
-      </div>
       <Modal
         open={isModalOpen}
         closeIcon={<Close/>}
@@ -105,7 +106,7 @@ const Header = () => {
             width: "auto",
           },
         }}
-      >
+        >
         {/* Top */}
         <div className="flex items-center mb-2 border-b-2 border-solid border-gray-800/5 rounded-md">
           <h5 className="text-orange-400 text-lg cursor-pointer font-semibold mr-[30px]">Add Question</h5>
@@ -127,30 +128,30 @@ const Header = () => {
             onChange={(e) => setDescription(e.target.value)}
             type="text"
             placeholder="Ask your question."
-          />
+            />
         <div
           style={{
             display: "flex",
             flexDirection: "column",
           }}
-        >
+          >
           <Input
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             type="text"
             placeholder="Add image URL (optional)."
-          />
+            />
           {/* Image preview */}
           {imageUrl !=="" && (
             <img 
-              style={{
-                height: "40vh",
-                objectFit: "contain",
-              }}
-              src={imageUrl}
-              alt="display preview"
+            style={{
+              height: "40vh",
+              objectFit: "contain",
+            }}
+            src={imageUrl}
+            alt="display preview"
             />
-          )}
+            )}
      
         </div>
 
@@ -166,6 +167,7 @@ const Header = () => {
         </button>
     </div>
       </Modal>
+      </div>
     </div>
   )
 };
