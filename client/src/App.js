@@ -1,10 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from 'react';
+
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import { login, selectUser } from "../src/features/userSlice";
+
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase"
+
+import { login, selectUser } from "../src/features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   const user = useSelector(selectUser);
