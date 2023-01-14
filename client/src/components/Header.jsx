@@ -7,14 +7,14 @@ import { logout, selectUser } from "../features/userSlice";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { 
-  AssignmentTurnedInOutlined, 
-  Close,
-  NotificationsOutlined, 
-  FeaturedPlayListOutlined,
-  PeopleAltOutlined, 
-  Search, 
-  Home, 
-  ExpandMore 
+  AssignmentTurnedInOutlinedIcon, 
+  CloseIcon,
+  NotificationsOutlinedIcon, 
+  FeaturedPlayListOutlinedIcon,
+  PeopleAltOutlinedIcon, 
+  SearchIcon, 
+  HomeIcon, 
+  ExpandMoreIcon 
 } from '@mui/icons-material';
 
 import { Avatar, Input } from '@mui/material';
@@ -27,6 +27,7 @@ const Header = () => {
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
+  // Function to handle add question
   const handleAddQuestion = async() => {
     if(description!==""){
       const config = {
@@ -69,23 +70,23 @@ const Header = () => {
       </div>
       <div className="flex">
         <div className="headerIcon">
-          <Home/>
+          <HomeIcon/>
         </div>
         <div className="headerIcon">
-          <FeaturedPlayListOutlined/>
+          <FeaturedPlayListOutlinedIcon/>
         </div>
         <div className="headerIcon">
-          <AssignmentTurnedInOutlined/>
+          <AssignmentTurnedInOutlinedIcon/>
         </div>
         <div className="headerIcon">
-          <PeopleAltOutlined/>
+          <PeopleAltOutlinedIcon/>
         </div>
         <div className="headerIcon">
-          <NotificationsOutlined/>
+          <NotificationsOutlinedIcon/>
         </div>
       </div>
       <div className="hidden md:flex items-center border-2 rounded-lg border-solid border-gray-300 p-[5px] ml-[5px]">
-        <Search/>
+        <SearchIcon/>
         <input className="bg-transparent outline-none border-none" type="text" placeholder='Search...'/>
       </div>
       <div className="flex items-center ml-[25px]">
@@ -95,7 +96,7 @@ const Header = () => {
         <button className="px-2 py-1 rounded-lg ml-1 bg-orange-300 hover:bg-orange-500" onClick={() => setIsModalOpen(true)}>Add Question</button>
       <Modal
         open={isModalOpen}
-        closeIcon={<Close/>}
+        closeIcon={<CloseIcon/>}
         onClose={() => setIsModalOpen(false)}
         closeOnEsc
         center
@@ -106,7 +107,7 @@ const Header = () => {
             width: "auto",
           },
         }}
-        >
+      >
         {/* Top */}
         <div className="flex items-center mb-2 border-b-2 border-solid border-gray-800/5 rounded-md">
           <h5 className="text-orange-400 text-lg cursor-pointer font-semibold mr-[30px]">Add Question</h5>
@@ -116,9 +117,9 @@ const Header = () => {
         <div className="flex items-center mt-[30px]">
           <Avatar src={user?.photo} className="avatar" />
           <div className="flex items-center text-gray-600 p-1 ml-2 bg-white rounded-3xl cursor-pointer">
-            <PeopleAltOutlined />
+            <PeopleAltOutlinedIcon />
             <p className="m1-2 text-sm text-gray-700">Public</p>
-            <ExpandMore />
+            <ExpandMoreIcon />
           </div>
         </div>
         <div className="flex flex-col mt-[30px]">
@@ -128,41 +129,38 @@ const Header = () => {
             onChange={(e) => setDescription(e.target.value)}
             type="text"
             placeholder="Ask your question."
-            />
-        <div
+          />
+          <div
           style={{
             display: "flex",
             flexDirection: "column",
           }}
           >
-          <Input
-            value={imageUrl}
+          <Input 
+            type="text" 
+            value={imageUrl} 
+            placeholder="Optional: add image URL." 
             onChange={(e) => setImageUrl(e.target.value)}
-            type="text"
-            placeholder="Add image URL (optional)."
-            />
+          />
           {/* Image preview */}
           {imageUrl !=="" && (
             <img 
-            style={{
+              style={{
               height: "40vh",
               objectFit: "contain",
-            }}
-            src={imageUrl}
-            alt="display preview"
+              }}
+              src={imageUrl}
+              alt="display preview"
             />
-            )}
-     
+          )}
         </div>
-
         </div>
     {/* Buttons on the modal */}
-
     <div className="flex flex-col-reverse mt-2 items-center">
         <button className="mt-2 border-none outline-none text-grey-400 text-bold p-2 rounded-3xl cursor-pointer hover:text-red" onClick={() => setIsModalOpen(false)}>
             Cancel
         </button>
-        <button onClick={handleAddQuestion} type="submit" className="mt-2 border-none outline-none text-orange-500 text-bold p-2 rounded-3xl cursor-pointer hover:text-orange-500 w-1/2">
+        <button onClick={handleAddQuestion} type="submit" className="mt-2 border-none outline-none text-orange-500 text-bold p-2 rounded-3xl cursor-pointer hover:text-orange-800 w-1/2">
             Add Question
         </button>
     </div>
