@@ -7,14 +7,14 @@ import { logout, selectUser } from "../features/userSlice";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { 
-  AssignmentTurnedInOutlinedIcon, 
-  CloseIcon,
-  NotificationsOutlinedIcon, 
-  FeaturedPlayListOutlinedIcon,
-  PeopleAltOutlinedIcon, 
-  SearchIcon, 
-  HomeIcon, 
-  ExpandMoreIcon 
+  AssignmentTurnedInOutlined, 
+  Close,
+  NotificationsOutlined, 
+  FeaturedPlayListOutlined,
+  PeopleAltOutlined, 
+  Search, 
+  Home, 
+  ExpandMore 
 } from '@mui/icons-material';
 
 import { Avatar, Input } from '@mui/material';
@@ -70,23 +70,23 @@ const Header = () => {
       </div>
       <div className="flex">
         <div className="headerIcon">
-          <HomeIcon/>
+          <Home/>
         </div>
         <div className="headerIcon">
-          <FeaturedPlayListOutlinedIcon/>
+          <FeaturedPlayListOutlined/>
         </div>
         <div className="headerIcon">
-          <AssignmentTurnedInOutlinedIcon/>
+          <AssignmentTurnedInOutlined/>
         </div>
         <div className="headerIcon">
-          <PeopleAltOutlinedIcon/>
+          <PeopleAltOutlined/>
         </div>
         <div className="headerIcon">
-          <NotificationsOutlinedIcon/>
+          <NotificationsOutlined/>
         </div>
       </div>
       <div className="hidden md:flex items-center border-2 rounded-lg border-solid border-gray-300 p-[5px] ml-[5px]">
-        <SearchIcon/>
+        <Search/>
         <input className="bg-transparent outline-none border-none" type="text" placeholder='Search...'/>
       </div>
       <div className="flex items-center ml-[25px]">
@@ -96,7 +96,7 @@ const Header = () => {
         <button className="px-2 py-1 rounded-lg ml-1 bg-orange-300 hover:bg-orange-500" onClick={() => setIsModalOpen(true)}>Add Question</button>
       <Modal
         open={isModalOpen}
-        closeIcon={<CloseIcon/>}
+        closeIcon={<Close/>}
         onClose={() => setIsModalOpen(false)}
         closeOnEsc
         center
@@ -117,9 +117,9 @@ const Header = () => {
         <div className="flex items-center mt-[30px]">
           <Avatar src={user?.photo} className="avatar" />
           <div className="flex items-center text-gray-600 p-1 ml-2 bg-white rounded-3xl cursor-pointer">
-            <PeopleAltOutlinedIcon />
+            <PeopleAltOutlined />
             <p className="m1-2 text-sm text-gray-700">Public</p>
-            <ExpandMoreIcon />
+            <ExpandMore />
           </div>
         </div>
         <div className="flex flex-col mt-[30px]">
