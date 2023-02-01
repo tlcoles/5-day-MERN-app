@@ -5,25 +5,12 @@ import axios from "axios";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { Avatar } from '@mui/material';
-import {
-    Close,
-    ArrowDownwardOutlined,
-    ArrowUpwardOutlined,
-    ChatBubbleOutlined,
-    MoreHorizOutlined,
-    RepeatOneOutlined,
-    ShareOutlined,
-  } from '@mui/icons-material';
+import { Close } from '@mui/icons-material';
 
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
-import ReactTimeAgo from "react-time-ago";
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en.json";
 import ReactHtmlParser from "html-react-parser";
 
-TimeAgo.addDefaultLocale(en)
 
 const Post = ({post}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,13 +28,10 @@ const Post = ({post}) => {
     }
 
     // Function for LastSeen
-    //! ReactTimeAgo is not functioning as expected, because the date format is different that what it can handle (or something). Fix later.
-
     const LastSeen = ({date}) => {
         return(
           <div>
-                {date}
-            {/* <ReactTimeAgo date={Date.parse(date)} locale="en-US" timeStyle='round'/> */}
+               {new Date(date).toLocaleString()}
           </div>
         )
       }
@@ -143,15 +127,7 @@ const Post = ({post}) => {
          {post.imageUrl !== "" && <img className="w-full max-h-[400px] object-contain bg-transparent rounded-md cursor-pointer mt-2" src={post.imageUrl}/>}
        </div>
 
-            {/* Utility buttons */}
-            <div className='bg-gray-100 w-full mt-1 py-1 px-2 flex items-center justify-between rounded-3xl'>
-                <ArrowUpwardOutlined className="text-orange-300 cursor-pointer mr-[40px]" />
-                <ArrowDownwardOutlined className="text-orange-300 cursor-pointer mr-[40px]" />
-                <RepeatOneOutlined  className="text-orange-300 cursor-pointer ml-[30px]"/>
-                <ChatBubbleOutlined  className="text-orange-300 cursor-pointer ml-[30px]"/> 
-                <ShareOutlined  className="text-orange-300 cursor-pointer ml-[30px]"/>
-                <MoreHorizOutlined className="text-orange-300 cursor-pointer ml-[30px]"/>
-            </div>
+
             <button onClick={handleShowAnswers} className='text-black/50 text-sm font-bold mx-2'>{post?.allAnswers.length} Answer(s)</button>
         
             {
