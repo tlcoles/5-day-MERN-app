@@ -18,8 +18,12 @@ import {
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-// import ReactTimeAgo from "react-time-ago";
+import ReactTimeAgo from "react-time-ago";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
 import ReactHtmlParser from "html-react-parser";
+
+TimeAgo.addDefaultLocale(en)
 
 const Post = ({post}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,11 +41,13 @@ const Post = ({post}) => {
     }
 
     // Function for LastSeen
+    //! ReactTimeAgo is not functioning as expected, because the date format is different that what it can handle (or something). Fix later.
 
     const LastSeen = ({date}) => {
         return(
           <div>
-            DATE HERE
+                {date}
+            {/* <ReactTimeAgo date={Date.parse(date)} locale="en-US" timeStyle='round'/> */}
           </div>
         )
       }
