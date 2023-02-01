@@ -82,7 +82,7 @@ const Post = ({post}) => {
     return (
         <div>
             <div className="flex items-center">
-                <Avatar/>
+                <Avatar src={post?.user?.photo} className="avatar" />
                 <h4 className="ml-2 cursor-pointer text-xs hover:underline">{post?.user?.userName}</h4>
                 <small className="ml-2">
                     <LastSeen date={post?.createdAt}/>
