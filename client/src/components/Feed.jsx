@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Post from "./Post";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);

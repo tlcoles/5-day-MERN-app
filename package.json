@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/tlcoles/5-day-MERN-app#readme",
   "dependencies": {
-    "eslint": "^8.29.0"
+    "eslint": "^8.29.0",
+    "html-react-parser": "^3.0.8",
+    "react-quill": "^2.0.0",
+    "react-time-ago": "^7.2.1"
   }
 }
