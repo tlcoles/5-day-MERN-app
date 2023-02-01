@@ -69,12 +69,12 @@ const Post = ({post}) => {
             .post("/api/answers", body, config)
             .then((res) => {
               console.log(res.data);
-              alert.success("Answer added successfully.");
+              alert("Answer added successfully.");
               setIsModalOpen(false);
               window.location.href = "/";
             })
             .catch((e) => {
-              alert.error("Error submitting answer. Please try again.");
+              alert("Error submitting answer. Please try again.");
             });
         }
     }
@@ -98,7 +98,7 @@ const Post = ({post}) => {
 
             <Modal
                 open={isModalOpen}
-                closeIcon={Close}
+                closeIcon={<Close/>}
                 onClose={() => setIsModalOpen(false)}
                 closeOnEsc
                 center
