@@ -89,6 +89,13 @@ const Post = ({post}) => {
                 </small>
             </div>
 
+            <div className="flex flex-col">
+                <div className='m-2 font-bold cursor-pointer flex items-center flex-1'>
+                <p className="hover:underline">{post?.description}</p>
+                <button className="ml-auto cursor-pointer p-2 bg-orange-300 outline-none border-none font-light text-sm rounded-md hover:bg-orange-500 transition-all duration-300 ease-in-out" onClick={() => {
+                    setIsModalOpen(true)
+                }}>Answer</button>
+
             <Modal
                 open={isModalOpen}
                 closeIcon={Close}
@@ -132,6 +139,10 @@ const Post = ({post}) => {
                 </div>
             </Modal>
 
+            </div>
+         {post.imageUrl !== "" && <img className="w-full max-h-[400px] object-contain bg-transparent rounded-md cursor-pointer mt-2" src={post.imageUrl}/>}
+       </div>
+
             {/* Utility buttons */}
             <div className='bg-gray-100 w-full mt-1 py-1 px-2 flex items-center justify-between rounded-3xl'>
                 <ArrowUpwardOutlined className="text-orange-300 cursor-pointer mr-[40px]" />
@@ -151,7 +162,7 @@ const Post = ({post}) => {
                         <>
                             <div className="flex flex-col border-t-2 border-t-solid border-t-gray-100">
                                 <div className='flex items-center mb-2 text-sm font-semibold text-gray-800'>
-                                    <Avatar/>
+                                    <Avatar src={_a?.user?.photo} />
                                     <div className="ml-1 my-2">
                                     <p>{_a?.user?.userName}</p>
                                     <span>
